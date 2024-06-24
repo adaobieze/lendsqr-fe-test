@@ -4,28 +4,29 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
+};
 
 html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
-}
-
-body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
+};
 
 a {
     color: inherit;
     text-decoration: none;
-}
+};
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
+
+// Override browser-set background for autocomplete form fields
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
