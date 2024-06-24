@@ -5,7 +5,7 @@ import LoginPagePhoto from '/public/illustrations/LoginPagePhoto.svg';
 import LendSQRLogo from '/public/brand-assets/LendsqrLogo.svg';
 import LoadingSpinner from '@/components/ui-components/loadingSpinner';
 import LoginForm from '@/components/loginForm';
-import styles from '@/styles/pages/LoginPage.module.scss';
+import styles from '@/styles/pages/loginPage.module.scss';
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(true);

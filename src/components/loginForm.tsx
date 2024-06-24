@@ -7,7 +7,7 @@ import { LoginFormData } from '@/lib/types';
 import Link from 'next/link';
 import { TextField, Button, FormHelperText, FormControl, CircularProgress } from '@mui/material';
 import { SnackbarContext } from '@/app/providers';
-import styles from '@/styles/components/LoginForm.module.scss';
+import styles from '@/styles/components/loginForm.module.scss';
 
 export default function LoginForm() {
     const [show, setShow] = React.useState(false);
