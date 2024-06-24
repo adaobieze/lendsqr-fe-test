@@ -1,7 +1,10 @@
-import React from 'react'
+'use client'
 
 export default function Dashboard() {
     return (
-        <div>Dashboard</div>
-    )
-}
+        <div>
+            DASHBOARD
+        </div >
+    );
+};
+

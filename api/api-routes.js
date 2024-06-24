@@ -74,7 +74,7 @@ async function handler(req, res) {
         break;
     }
   } catch (error) {
-    console.error('Error handling request:', error);
+    // console.error('Error handling request:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
