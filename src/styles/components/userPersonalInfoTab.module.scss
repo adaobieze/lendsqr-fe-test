@@ -1,25 +1,60 @@
 @import '../variables';
 
 .userPersonalInfoTab {
-    p {
-        font-family: var(--font-work-sans);
-    }
+
+    font-family: $sans;
 
     .sectionTitle {
         font-weight: 500;
         font-size: 16px;
         color: $secondary-color;
+        margin-top: 30px;
     }
 
     .infoGrid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        column-gap: 100px;
-        row-gap: 30px;
-        margin-top: 30px;
-        text-wrap: nowrap;
 
-        .infoItem {
+        &PersonalInfo {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            column-gap: 100px;
+            row-gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-wrap: nowrap;
+        }
+
+        &EducationAndEmployment {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 7.2%;
+            row-gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-wrap: nowrap;
+        }
+
+        &Socials {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 50px;
+            row-gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-wrap: nowrap;
+        }
+
+        &Guarantors {
+
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            column-gap: 100px;
+            row-gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-wrap: nowrap;
+        }
+
+        &Item {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -69,30 +104,5 @@
 
     .divider {
         margin-block: 30px;
-    }
-}
-
-.educationAndEmployment {
-    .infoGrid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 50px;
-    }
-}
-
-.socials {
-    .infoGrid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 50px;
-    }
-}
-
-.guarantors {
-    .infoGrid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        column-gap: 100px;
-
-        .divider {
-            margin-block: 30px;
-        }
     }
 }
