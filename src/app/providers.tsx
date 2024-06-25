@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Snackbar, Alert } from '@mui/material';
+import { usePathname } from 'next/navigation';
+import Navigation from '@/components/ui-components/navigation';
 
 export const SnackbarContext = React.createContext({
     showSnackbar: (message: string, severity: 'success' | 'info' | 'warning' | 'error') => { },
@@ -26,9 +28,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         setSnackbar({ ...snackbar, open: false });
     };
 
+    const pathname = usePathname();
+    const isLoginPage = pathname === '/';
+    const content = isLoginPage ? children : <Navigation>{children}</Navigation>;
+
     return (
         <SnackbarContext.Provider value={{ showSnackbar }}>
-            {children}
+            {content}
             <Snackbar
                 open={snackbar.open}
                 autoHideDuration={6000}

@@ -30,7 +30,6 @@ export default function LoginForm() {
         try {
             await login(formData.email, formData.password);
         } catch (err) {
-            // console.error('Login error:', err);
             const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
             showSnackbar(errorMessage, 'error');
         } finally {

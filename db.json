@@ -1,13 +1,18 @@
 {
-  "appUsers": [{
-    "id": "1",
-    "email": "test@example.com",
-    "password": "password123.",
-    "name": "Adedeji",
-    "firstName": "Simisola",
-    "lastName": "Adedeji",
-    "profilePhoto": "/images/userAvatar.png"
-  }],
+  "appUsers": [
+    {
+      "id": "1",
+      "email": "test@example.com",
+      "password": "password123.",
+      "name": "Adedeji",
+      "firstName": "Simisola",
+      "lastName": "Adedeji",
+      "profilePhoto": "/images/userAvatar.png",
+      "organizations":[
+        "Lendsqr", "Irorun"
+      ]
+    }
+  ],
   "notifications": [
     {
       "notification_id": 1,

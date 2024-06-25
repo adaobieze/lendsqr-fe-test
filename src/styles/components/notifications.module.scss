@@ -1,0 +1,86 @@
+@import '../variables';
+
+.notifications {
+    &Button {
+        border-radius: 50%;
+        min-width: 0;
+        width: 48px;
+        height: 48px;
+        padding: 2px;
+        background-color: transparent;
+        border: none;
+    }
+
+    &Badge {
+        :global(.MuiBadge-badge) {
+            top: 4px;
+            right: 4px;
+        }
+    }
+
+    &Icon {
+        color: $secondary-color;
+    }
+
+    &Popover {
+        width: 320px;
+        background-color: #fafafa;
+    }
+
+    &Header {
+        padding: 14px 12px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
+        gap: 12px;
+
+        &Title {
+            margin-right: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    &Content {
+        max-height: 384px;
+        overflow-y: auto;
+    }
+
+    &Item {
+        padding: 16px;
+        border-bottom: 1px solid #e0e0e0;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &Message {
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &Timestamp {
+            color: #757575;
+        }
+    }
+
+    &LoadingBox {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    &ErrorBox {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    &EmptyBox {
+        padding: 32px 0;
+        text-align: center;
+    }
+}
