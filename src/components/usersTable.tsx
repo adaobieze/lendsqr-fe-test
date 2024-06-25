@@ -59,7 +59,6 @@ export default function UsersTable({ table_data }: UserTableProps) {
     ];
 
     const handleRowClick = (userId: string) => {
-        console.log('Clicked user ID:', userId);
         router.push(`/users/user-details?id=${userId}`);
     };
 

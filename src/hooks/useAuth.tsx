@@ -25,7 +25,6 @@ export function useAuth() {
                 storeLogin(response.data.user);
                 router.push('/dashboard');
             } else {
-                console.error('login error in useAuth:', response.error);
                 throw new Error(response.error || 'Login failed');
             }
         } catch (error) {
