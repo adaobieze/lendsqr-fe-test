@@ -1,0 +1,55 @@
+@import '../variables';
+
+.userDropdown {
+    &Button {
+        text-transform: none;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: $mobile-breakpoint) {
+            .userDropdownName {
+                display: none;
+            }
+        }
+    }
+
+    &Content {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &Avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    &Name {
+        color: $secondary-color;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    &Menu {
+        width: 100%;
+        padding: 10px;
+    }
+
+    &MenuItem {
+        display: block;
+
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
+
+    &MenuItemMobile {
+        display: none;
+
+        @media (max-width: $mobile-breakpoint) {
+            display: block;
+        }
+    }
+}

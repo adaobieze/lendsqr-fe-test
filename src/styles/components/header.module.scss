@@ -1,0 +1,86 @@
+@import '../variables';
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    padding: 30px 60px 30px 30px;
+
+    &Logo {
+        width: 283px;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: auto;
+        }
+
+        &Svg {
+            width: 145px;
+            height: 30px;
+            object-fit: contain;
+
+            @media (max-width: $mobile-breakpoint) {
+                width: 130px;
+            }
+        }
+    }
+
+    &Content {
+        width: 1157px;
+        padding-left: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: auto;
+            padding-left: 30px;
+        }
+    }
+
+    &Links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            text-decoration: underline;
+            color: #213F7D;
+            font-family: var(--font-roboto);
+            font-size: 16px;
+            margin-right: 47px;
+
+            @media (max-width: $mobile-breakpoint) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &UserSection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &SearchDesktop {
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
+
+    &SearchMobile {
+        display: none;
+
+        @media (max-width: $mobile-breakpoint) {
+            display: block;
+            padding-right: 10px;
+        }
+    }
+}

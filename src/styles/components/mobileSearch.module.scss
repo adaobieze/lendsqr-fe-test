@@ -1,0 +1,65 @@
+// styles/components/mobileSearch.module.scss
+@import '../variables';
+
+.searchIcon {
+    color: $secondary-color;
+    
+}
+
+.dialogContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    margin-bottom: 20px;
+
+    :global(.MuiOutlinedInput-root) {
+        height: 40px;
+        border-radius: 8px;
+
+        fieldset {
+            border-color: rgba(84, 95, 125, 0.15);
+            border-width: 1px;
+        }
+
+        &:hover fieldset {
+            border-color: rgba(9, 30, 66, .31);
+        }
+
+        &.Mui-focused fieldset {
+            border-color: $primary-color;
+            border-width: 1px;
+        }
+
+        input {
+            font-family: 'Avenir Next';
+            font-size: .875rem;
+            font-weight: 400;
+
+            &::placeholder {
+                color: #545F7D;
+                font-size: 14px;
+            }
+        }
+    }
+
+    :global(.MuiInputLabel-root) {
+        color: rgba(9, 30, 66, 0.31);
+        font-family: 'Avenir Next';
+        font-size: 14px;
+
+        &.Mui-focused {
+            color: $primary-color;
+        }
+    }
+}
+
+.searchButton {
+    background-color: $primary-color;
+    color: white;
+    width: 100%;
+}

@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUserStore } from '@/hooks/userStore';
@@ -14,7 +15,7 @@ const withAuth = (WrappedComponent: any) => {
         if (token && !isLoggedIn) {
           setLoggedInFromToken();
         } else if (!token && !isLoggedIn) {
-          router.replace('/login');
+          router.replace('/');
         }
       };
 

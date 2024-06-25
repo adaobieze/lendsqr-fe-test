@@ -10,6 +10,7 @@ export interface AppUser {
     firstName: string;
     lastName: string;
     profilePhoto: string;
+    organizations: string[];
 };
 
 export interface AppUserState {
@@ -18,4 +19,11 @@ export interface AppUserState {
     login: (user: AppUser) => void;
     logout: () => void;
     setLoggedInFromToken: () => void;
+};
+
+export interface Notification {
+    notification_id: number;
+    notification_timestamp: string;
+    notification_message: string;
+    notification_image: string;
 };

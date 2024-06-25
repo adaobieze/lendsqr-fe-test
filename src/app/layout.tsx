@@ -63,14 +63,12 @@ export const metadata: Metadata = {
   description: "Project for Lendsqr Frontend Engineering Assessment",
 };
 
-const publicPages = ['/'];
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" suppressHydrationWarning className={`${workSans.variable} ${avenirNext.variable} ${roboto.variable} ${sfCompact.variable}`}>
       <head>
