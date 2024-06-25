@@ -28,12 +28,13 @@
     "next-images": "^1.8.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "styled-jsx": "^5.1.6",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/dom": "^9.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
