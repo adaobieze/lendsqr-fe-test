@@ -1,18 +1,16 @@
 {
-  "appUsers": [
-    {
-      "id": "1",
-      "email": "test@example.com",
-      "password": "password123.",
-      "name": "Adedeji",
-      "firstName": "Simisola",
-      "lastName": "Adedeji",
-      "profilePhoto": "/images/userAvatar.png",
-      "organizations":[
-        "Lendsqr", "Irorun"
-      ]
-    }
-  ],
+  "appUsers": [{
+    "id": "1",
+    "email": "test@example.com",
+    "password": "password123.",
+    "name": "Adedeji",
+    "firstName": "Simisola",
+    "lastName": "Adedeji",
+    "profilePhoto": "/images/userAvatar.png",
+    "organizations": [
+      "Lendsqr", "Irorun"
+    ]
+  }],
   "notifications": [
     {
       "notification_id": 1,
@@ -882,6 +880,59 @@
     "phoneNumber": "6561966162",
     "dateJoined": "2020-09-13 16:23:36",
     "status": "blacklisted"
+  }],
+  "userDetails": {
+    "id": "01J13YY1ESR3H7MYV93Q79K8SA",
+    "userPhoto": "/images/userIcon.png",
+    "userTier": 1,
+    "personalInfo": {
+      "userName": "Grace Effiom",
+      "userRegNo": "LSQFf587g90",
+      "phoneNumber": "07060780922",
+      "email": "grace@gmail.com",
+      "bvn": "07060780922",
+      "gender": "female",
+      "maritalStatus": "single",
+      "children": "none",
+      "typeOfResidence": "Parent's Apartment"
+    },
+    "educationAndEmployment": {
+      "educationLevel": "B.Sc",
+      "employmentStatus": "employed",
+      "employmentSector": "FinTech",
+      "employmentDuration": "2 years",
+      "officeEmail": "grace@lendsqr.com",
+      "monthlyIncomeRange": {
+        "lowRange": 200000,
+        "highRange": 400000
+      },
+      "loanRepayment": 40000
+    },
+    "socials": {
+      "twitter": "@grace_effiom",
+      "facebook": "Grace Effiom",
+      "instagram": "@grace_effiom"
+    },
+    "guarantors": [{
+        "id": 1,
+        "guarantorName": "Debby Ogana",
+        "guarantorPhoneNumber": "07060780922",
+        "email": "debby@gmail.com",
+        "relationship": "Sister"
+      },
+      {
+        "id": 2,
+        "guarantorName": "Debby Ogana",
+        "guarantorPhoneNumber": "07060780922",
+        "email": "debby@gmail.com",
+        "relationship": "Sister"
+      }
+    ],
+    "bankDetails": {
+      "id": 1,
+      "bankName": "Providus Bank",
+      "accountNumber": "9912345678",
+      "balance": 200000
+    }
   }
-  ]
 }

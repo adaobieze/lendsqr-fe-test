@@ -1,0 +1,98 @@
+@import '../variables';
+
+.userPersonalInfoTab {
+    p {
+        font-family: var(--font-work-sans);
+    }
+
+    .sectionTitle {
+        font-weight: 500;
+        font-size: 16px;
+        color: $secondary-color;
+    }
+
+    .infoGrid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 100px;
+        row-gap: 30px;
+        margin-top: 30px;
+        text-wrap: nowrap;
+
+        .infoItem {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .label {
+                font-weight: 400;
+                font-size: 12px;
+                color: $pale-secondary-color;
+                text-transform: uppercase;
+            }
+
+            .value {
+                font-weight: 500;
+                font-size: 16px;
+                color: $pale-secondary-color;
+                text-transform: capitalize;
+
+                &Email {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $pale-secondary-color;
+                    text-transform: none;
+
+                    @media (max-width: $mobile-breakpoint) {
+                        font-size: 14px;
+                        text-wrap: wrap;
+                    }
+                }
+
+                a {
+                    color: inherit;
+                }
+
+                @media (max-width: $mobile-breakpoint) {
+                    font-size: 14px;
+                    text-wrap: wrap;
+                }
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 10px;
+            text-wrap: wrap;
+        }
+    }
+
+    .divider {
+        margin-block: 30px;
+    }
+}
+
+.educationAndEmployment {
+    .infoGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: 50px;
+    }
+}
+
+.socials {
+    .infoGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: 50px;
+    }
+}
+
+.guarantors {
+    .infoGrid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 100px;
+
+        .divider {
+            margin-block: 30px;
+        }
+    }
+}
