@@ -105,5 +105,3 @@ interface UserBankDetails {
     accountNumber: string;
     balance: number;
 }
-
-
