@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from '@/styles/components/MetricCard.module.scss';
+import styles from '@/styles/components/metricCard.module.scss';
 import Icon from "./icon";
 import { useMemo } from 'react';
 
