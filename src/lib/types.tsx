@@ -27,3 +27,21 @@ export interface Notification {
     notification_message: string;
     notification_image: string;
 };
+
+
+export interface UserDashboardMetrics {
+    allUsers: number;
+    activeUsers: number;
+    usersWithLoans: number;
+    usersWithSavings: number;
+};
+
+export interface User {
+    id: string;
+    organization: string;
+    userName: string;
+    email: string;
+    phoneNumber: string;
+    dateJoined: string;
+    status: string;
+};
