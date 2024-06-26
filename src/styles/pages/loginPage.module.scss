@@ -21,11 +21,30 @@
                 width: 174px;
                 height: 36px;
             }
+
+            @media (max-width: $mobile-breakpoint) {
+                padding-left: 0;
+                margin-bottom: 0;
+            }
         }
 
         .loginPhoto {
             margin-left: 67px;
             object-fit: cover;
+
+            @media (max-width: $mobile-breakpoint) {
+                display: none;
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            height: max-content;
+            padding-top: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
         }
     }
 
@@ -35,5 +54,20 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
+        @media (max-width: $mobile-breakpoint) {
+            height: max-content;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        padding-inline: 30px;
     }
 }

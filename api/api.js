@@ -1,25 +1,41 @@
-const { NextApiRequest, NextApiResponse } = require('next');
 const fs = require('fs');
 const path = require('path');
-
-const data = {};
 
 async function handler(req, res) {
   const { method } = req;
   const { endpoint } = req.query;
-  const { resourceId, data: newData } = req.body || {};
+  const { resourceId, data: newData, email, password } = req.body || {};
 
   try {
+    const filePath = path.join(process.cwd(), 'db.json');
+    const jsonData = fs.readFileSync(filePath, 'utf-8');
+    const existingData = JSON.parse(jsonData);
+
+    // Login handling
+    if (endpoint === 'login' && method === 'POST') {
+      const user = existingData.appUsers.find((u) => u.email === email && u.password === password);
+      if (user) {
+        const token = Buffer.from(`${email}:${Date.now()}`).toString('base64');
+        res.status(200).json({
+          success: true,
+          data: {
+            token,
+            user: { id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName, profilePhoto: user.profilePhoto, organizations: user.organizations}
+          }
+        });
+      } else {
+        res.status(401).json({ success: false, error: 'Invalid username and/or password' });
+      }
+      return;
+    }
+
+    // CRUD operations handling
     if (!endpoint) {
       res.status(400).json({ error: 'Endpoint not provided' });
       return;
     }
 
     const endpointString = Array.isArray(endpoint) ? endpoint[0] : endpoint;
-
-    const filePath = path.join(process.cwd(), 'db.json');
-    const jsonData = fs.readFileSync(filePath, 'utf-8');
-    const existingData = JSON.parse(jsonData);
 
     switch (method) {
       case 'GET':
@@ -74,7 +90,6 @@ async function handler(req, res) {
         break;
     }
   } catch (error) {
-    // console.error('Error handling request:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
