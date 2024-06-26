@@ -1,7 +1,7 @@
 'use strict';
 
 import Cookies from 'js-cookie';
-const apiUrl = '/api/api-routes';
+const apiUrl = '/api/api';
 
 type ApiResponse<T> = {
     success: boolean;
@@ -11,7 +11,7 @@ type ApiResponse<T> = {
 
 async function login(email: string, password: string): Promise<ApiResponse<{ token: string, user: any }>> {
     try {
-        const response = await fetch('/api/login', {
+        const response = await fetch(`${apiUrl}?endpoint=login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +31,6 @@ async function login(email: string, password: string): Promise<ApiResponse<{ tok
 
         return data;
     } catch (error) {
-        // console.error('Error logging in:', error);
         throw error;
     }
 }
@@ -60,7 +59,6 @@ async function fetchData<T = unknown>(endpoint: string): Promise<T>{
         const data = await response.json();
         return data.data;
     } catch (error) {
-        // console.error('Error fetching data:', error);
         throw error;
     }
 };
@@ -78,7 +76,6 @@ async function createData<T>(endpoint: string, newData: any): Promise<ApiRespons
         const data = await response.json();
         return data;
     } catch (error) {
-        // console.error('Error creating data:', error);
         throw error;
     }
 };
@@ -96,7 +93,6 @@ async function updateData<T>(endpoint: string, resourceId: string, updatedData: 
         const result = await response.json();
         return result;
     } catch (error) {
-        // console.error('Error updating data:', error);
         throw error;
     }
 };
@@ -114,7 +110,6 @@ async function deleteData<T>(endpoint: string, resourceId: string): Promise<ApiR
         const result = await response.json();
         return result;
     } catch (error) {
-        // console.error('Error deleting data:', error);
         throw error;
     }
 }

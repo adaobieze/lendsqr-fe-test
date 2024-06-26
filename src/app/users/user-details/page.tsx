@@ -121,7 +121,13 @@ export default function UserDetails() {
                         '&::-webkit-scrollbar': { display: 'none' },
                     }}
                 >
-                    <TabList disableUnderline>
+                    <TabList
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}
+                        disableUnderline
+                    >
                         {['General Details', 'Documents', 'Bank Details', 'Loans', 'Savings', 'App and System'].map((label, index) => (
                             <Tab
                                 key={index}
@@ -129,9 +135,12 @@ export default function UserDetails() {
                                     fontFamily: 'var(--font-sf-compact)',
                                     color: activeTab === index ? 'rgba(57, 205, 204, 1)' : 'rgba(0, 0, 0, 0.8)',
                                     bgcolor: 'transparent',
-                                    flex: 'none', 
+                                    flex: 'none',
                                     scrollSnapAlign: 'start',
-                                    '&:hover': { backgroundColor: 'transparent' },
+                                    '&:hover': {
+                                        backgroundColor: 'transparent',
+                                        color: 'rgba(57, 205, 204, 1)'
+                                    },
                                     '&:active': { backgroundColor: 'transparent' },
                                     '&:after': {
                                         content: '""',
@@ -139,6 +148,13 @@ export default function UserDetails() {
                                         height: '2px',
                                         width: '100%',
                                         bgcolor: activeTab === index ? 'rgba(57, 205, 204, 1)' : 'transparent'
+                                    },
+                                    '&.Mui-selected': {
+                                        backgroundColor: 'transparent'
+                                    },
+                                    '&.Mui-hovered': {
+                                        backgroundColor: 'transparent',
+                                        color: 'rgba(57, 205, 204, 1)'
                                     }
                                 }}
                             >
@@ -151,9 +167,19 @@ export default function UserDetails() {
 
             <Tabs
                 value={activeTab}
-                className={styles.userDetailsPageTabsContainer}
+                // className={styles.userDetailsPageTabsContainer}
+                sx={{
+                    padding: '30px',
+                    paddingBottom: '46px',
+                    width: '100%',
+                    backgroundColor: 'white',
+                    boxShadow: '3px 5px 20px 0px rgba(0, 0, 0, 0.04)',
+                    borderColor: 'rgba(33, 63, 125, 0.06)',
+                    borderWidth: '1px',
+                    borderRadius: '4px',
+                }}
             >
-                <TabPanel value={0}>
+                <TabPanel value={0} sx={{ padding: '0px' }}>
                     {userDetails && <UserPersonalInfoTab userDetails={userDetails} />}
                 </TabPanel>
                 <TabPanel value={1}>
@@ -172,6 +198,6 @@ export default function UserDetails() {
                     <p>App and System</p>
                 </TabPanel>
             </Tabs>
-        </div>
+        </div >
     )
 }
